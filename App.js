@@ -1,11 +1,11 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import {WelcomeScreen} from './screens';
+import {WelcomeScreen, IntroScreen} from './screens';
 
 function App() {
   return (
     <View style={{flex: 1}}>
-      <WelcomeScreen />
+      <IntroScreen />
     </View>
   );
 }

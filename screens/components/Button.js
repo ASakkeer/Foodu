@@ -4,9 +4,9 @@ import {StyleSheet, TouchableOpacity, Text} from 'react-native';
 
 const _styles = StyleSheet.create({
   button: {
-    flex: 1,
+    // flex: 1,
     paddingVertical: 15,
-    marginHorizontal: 8,
+    // marginHorizontal: 8,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

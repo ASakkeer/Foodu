@@ -7,24 +7,53 @@ const _styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 15,
     marginHorizontal: 8,
-    borderRadius: 100,
-    backgroundColor: '#1aac4b',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
-    color: 'white',
-    fontWeight: '600',
     textAlign: 'center',
     fontSize: 18,
   },
 });
 
 function CustomButton(props) {
-  const {customContainerStyle, customTextStyle, customTitle, onPress} = props;
+  const {
+    customContainerStyle,
+    customTextStyle,
+    customTitle,
+    onPress,
+    customBgColor,
+    customRadius,
+    customFontWeight,
+    customTextColor,
+    leftComponent,
+    rightComponent,
+  } = props;
   return (
     <TouchableOpacity
-      style={[_styles.button, customContainerStyle]}
+      style={[
+        _styles.button,
+        {
+          backgroundColor: customBgColor,
+          borderRadius: customRadius,
+        },
+        customContainerStyle,
+      ]}
       onPress={onPress}>
-      <Text style={[_styles.buttonText, customTextStyle]}>{customTitle}</Text>
+      {leftComponent && leftComponent}
+      <Text
+        style={[
+          _styles.buttonText,
+          {
+            fontWeight: customFontWeight,
+            color: customTextColor,
+          },
+          customTextStyle,
+        ]}>
+        {customTitle}
+      </Text>
+      {rightComponent && rightComponent}
     </TouchableOpacity>
   );
 }
@@ -34,6 +63,12 @@ CustomButton.propTypes = {
   customContainerStyle: PropTypes.object,
   customTextStyle: PropTypes.object,
   onPress: PropTypes.func,
+  customBgColor: PropTypes.string,
+  customRadius: PropTypes.number,
+  customFontWeight: PropTypes.string,
+  customTextColor: PropTypes.string,
+  leftComponent: PropTypes.node,
+  rightComponent: PropTypes.node,
 };
 
 CustomButton.defaultProps = {
@@ -41,6 +76,12 @@ CustomButton.defaultProps = {
   customContainerStyle: {},
   customTextStyle: {},
   onPress: () => {},
+  customBgColor: '#1aac4b',
+  customRadius: 100,
+  customFontWeight: '500',
+  customTextColor: '#fff',
+  leftComponent: null,
+  rightComponent: null,
 };
 
 export default CustomButton;

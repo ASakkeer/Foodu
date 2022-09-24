@@ -6,7 +6,7 @@ import {AuthHome} from './screens/Auth';
 function App() {
   return (
     <View style={{flex: 1}}>
-      <AuthHome />
+      <IntroScreen />
     </View>
   );
 }

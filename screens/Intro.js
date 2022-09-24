@@ -166,20 +166,6 @@ function IntroScreen() {
               ))}
           </View>
           <View style={_styles.buttonContainer}>
-            {/* <TouchableOpacity
-              style={[_styles.button, {backgroundColor: '#1aac4b'}]}
-              onPress={() => {
-                if (currentSliderIndex === 0) {
-                  return;
-                }
-                if (currentSliderIndex > 0) {
-                  const nextIndex = currentSliderIndex - 1;
-                  setCurrentSliderIndex(nextIndex);
-                  slider?.goToSlide(nextIndex, true);
-                }
-              }}>
-              <Text style={_styles.buttonText}>Previous</Text>
-            </TouchableOpacity> */}
             <CustomButton
               customTitle={`${
                 currentSliderIndex === slides.length - 1
@@ -187,6 +173,7 @@ function IntroScreen() {
                   : 'Next'
               }`}
               onPress={_changeSlides}
+              customFontWeight="bold"
             />
           </View>
         </SafeAreaView>

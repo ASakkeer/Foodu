@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import {IntroImageOne, IntroImageTwo, IntroImageThree} from '../assets/images';
+import {CustomButton} from './components';
 
 const {width: windowWidth, height: windowHeight} = Dimensions.get('window');
 
@@ -134,6 +135,17 @@ function IntroScreen() {
 
   const _keyExtractor = item => item.title;
 
+  const _changeSlides = () => {
+    if (currentSliderIndex === slides.length - 1) {
+      return;
+    }
+    if (currentSliderIndex < slides.length - 1) {
+      const nextIndex = currentSliderIndex + 1;
+      setCurrentSliderIndex(nextIndex);
+      slider?.goToSlide(nextIndex, true);
+    }
+  };
+
   const _renderPagination = activeIndex => {
     return (
       <View style={_styles.paginationContainer}>
@@ -168,24 +180,14 @@ function IntroScreen() {
               }}>
               <Text style={_styles.buttonText}>Previous</Text>
             </TouchableOpacity> */}
-            <TouchableOpacity
-              style={[_styles.button, {backgroundColor: '#1aac4b'}]}
-              onPress={() => {
-                if (currentSliderIndex === slides.length - 1) {
-                  return;
-                }
-                if (currentSliderIndex < slides.length - 1) {
-                  const nextIndex = currentSliderIndex + 1;
-                  setCurrentSliderIndex(nextIndex);
-                  slider?.goToSlide(nextIndex, true);
-                }
-              }}>
-              <Text style={_styles.buttonText}>{`${
+            <CustomButton
+              customTitle={`${
                 currentSliderIndex === slides.length - 1
                   ? 'Get Started'
                   : 'Next'
-              }`}</Text>
-            </TouchableOpacity>
+              }`}
+              onPress={_changeSlides}
+            />
           </View>
         </SafeAreaView>
       </View>

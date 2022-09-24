@@ -158,7 +158,7 @@ function IntroScreen() {
                   style={[
                     _styles.dot,
                     i === activeIndex
-                      ? {backgroundColor: '#1cb278', width: 30}
+                      ? {backgroundColor: '#1aac4b', width: 30}
                       : {backgroundColor: 'rgba(0, 0, 0, .2)'},
                   ]}
                   onPress={() => slider?.goToSlide(i, true)}

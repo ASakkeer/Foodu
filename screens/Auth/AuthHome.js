@@ -16,7 +16,7 @@ const {width: windowWidth, height: windowHeight} = Dimensions.get('window');
 
 const _styles = StyleSheet.create({
   image: {
-    width: windowWidth - 50,
+    width: 250,
     height: 250,
     // marginVertical: 32,
   },
@@ -34,7 +34,7 @@ function AuthHome() {
     <SafeAreaView style={{flex: 1}}>
       <ScrollView style={{flexGrow: 1}}>
         <View style={{flex: 1, padding: 15}}>
-          <View>
+          <View style={{alignItems: 'center'}}>
             <Image source={AuthHomeLogo} style={_styles.image} />
           </View>
           <View style={{flex: 1}}>

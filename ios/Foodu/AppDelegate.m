@@ -25,6 +25,10 @@ static void InitializeFlipper(UIApplication *application) {
 
 @implementation AppDelegate
 
+#if RCT_DEV
+  #import <React/RCTDevLoadingView.h>
+#endif
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 #ifdef FB_SONARKIT_ENABLED

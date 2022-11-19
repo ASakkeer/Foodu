@@ -32,48 +32,56 @@ const _styles = StyleSheet.create({
 function SignupScreen() {
   return (
     <SafeAreaView style={{flex: 1}}>
-      <ScrollView style={{flexGrow: 1}}>
+      <ScrollView contentContainerStyle={{flexGrow: 1}}>
         <View style={{flex: 1, padding: 15}}>
-          <View style={{alignItems: 'center'}}>
-            <Image source={AppLogo} style={_styles.image} />
-            <Text style={_styles.title}>Create New Account</Text>
-          </View>
-          <View>
-            <TextInputView
-              style={{
-                backgroundColor: '#f9f9f9',
-                borderRadius: 15,
-                paddingVertical: 15,
-                paddingHorizontal: 30,
-                marginBottom: 20,
-              }}
-              placeholder="Mobile Number"
-            />
-            <TextInputView
-              style={{
-                backgroundColor: '#f9f9f9',
-                borderRadius: 15,
-                paddingVertical: 15,
-                paddingHorizontal: 30,
-                marginBottom: 20,
-              }}
-              placeholder="Email"
-            />
-            <TextInputView
-              style={{
-                backgroundColor: '#f9f9f9',
-                borderRadius: 15,
-                paddingVertical: 15,
-                paddingHorizontal: 30,
-                marginBottom: 20,
-              }}
-              placeholder="Full Name"
-            />
+          <View style={{justifyContent: 'center', flex: 1}}>
             <View
               style={{
-                marginTop: 15,
+                alignItems: 'center',
+                justifyContent: 'flex-end',
               }}>
-              <CustomButton customTitle="Sign up" />
+              <Image source={AppLogo} style={_styles.image} />
+            </View>
+            <View style={{alignItems: 'center'}}>
+              <Text style={_styles.title}>Create New Account</Text>
+            </View>
+            <View>
+              <TextInputView
+                style={{
+                  backgroundColor: '#f9f9f9',
+                  borderRadius: 15,
+                  paddingVertical: 20,
+                  paddingHorizontal: 30,
+                  marginBottom: 20,
+                }}
+                placeholder="+91 0000000000"
+              />
+              <TextInputView
+                style={{
+                  backgroundColor: '#f9f9f9',
+                  borderRadius: 15,
+                  paddingVertical: 20,
+                  paddingHorizontal: 30,
+                  marginBottom: 20,
+                }}
+                placeholder="Email"
+              />
+              <TextInputView
+                style={{
+                  backgroundColor: '#f9f9f9',
+                  borderRadius: 15,
+                  paddingVertical: 20,
+                  paddingHorizontal: 30,
+                  marginBottom: 20,
+                }}
+                placeholder="Full Name"
+              />
+              <View
+                style={{
+                  marginTop: 15,
+                }}>
+                <CustomButton customTitle="Sign up" />
+              </View>
             </View>
           </View>
           <View
@@ -109,7 +117,6 @@ function SignupScreen() {
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'center',
-              flex: 1,
             }}>
             <CustomButton
               customTitle="F"
@@ -162,7 +169,7 @@ function SignupScreen() {
                 style={{
                   color: '#1aac4b',
                 }}>
-                Sign in
+                Sign up
               </Text>
             </TouchableOpacity>
           </View>
